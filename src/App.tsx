@@ -1,13 +1,18 @@
-import React from 'react';
-import GlobalStyles from './theme/globalStyles';
-
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import Home from './pages/Home'
+import { darkTheme } from './theme'
+import GlobalStyles from './theme/globalStyles'
 
 function App() {
   return (
     <>
-      <GlobalStyles />
+      <ThemeProvider theme={darkTheme}>
+        <GlobalStyles />
+        <Home />
+      </ThemeProvider>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
