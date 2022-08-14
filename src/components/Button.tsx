@@ -28,6 +28,7 @@ export const Button = styled.button<Props>`
       border: none;
       outline: none;
       width: ${width};
+      text-decoration: none;
       transition: all 0.2s ease-in-out;
       &:hover {
         color: ${background};

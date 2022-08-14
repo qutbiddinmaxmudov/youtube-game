@@ -8,8 +8,8 @@ const GlobalStyles = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: ${({ theme }) => theme.background.secondary}
-
+    background: ${({ theme }) => theme.background.secondary};
+    box-sizing: border-box;
   }
 `
 export default GlobalStyles
