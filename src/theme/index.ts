@@ -77,3 +77,34 @@ export const darkTheme: DefaultTheme = {
     },
   },
 }
+
+export const lightTheme: DefaultTheme = {
+  palette,
+  text: {
+    primary: palette.black,
+    secondary: palette.white,
+    alternative: palette.pink,
+  },
+  title: {
+    primary: palette.white,
+  },
+  background: {
+    primary: palette.violet,
+    secondary: palette.white,
+    alternative: palette.pink,
+  },
+  button: {
+    primary: {
+      color: palette.violet,
+      background: palette.white,
+    },
+    secondary: {
+      color: palette.white,
+      background: palette.violet,
+    },
+    alternative: {
+      color: palette.white,
+      background: palette.pink,
+    },
+  },
+}

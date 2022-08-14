@@ -6,13 +6,14 @@ type checkedProp = {
 }
 
 const Wrapper = styled.div<checkedProp>`
-  width: 43px;
+  width: 44px;
   height: 22px;
   background: ${({ checked }) => (checked ? '#41CA48' : '#CECECE')};
   padding: 1px;
   border-radius: 15.5px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  position: relative;
 `
 
 const Controller = styled.div<checkedProp>`
@@ -22,17 +23,23 @@ const Controller = styled.div<checkedProp>`
   box-shadow: -1px 0px 2px rgba(0, 0, 0, 0.1);
   border-radius: 100%;
   transition: all 0.3s ease-in-out;
-  transform: ${({ checked }) => (checked ? 'translateX(21px)' : 'translateX(0)')};
+  transform: ${({ checked }) =>
+    checked ? 'translateX(22px)' : 'translateX(0)'};
+  position: absolute;
+  left: 0;
+  top: 0;
 `
 
 type Props = {
-  checked: boolean
-  onCheck: React.Dispatch<React.SetStateAction<boolean>>
+  checked?: boolean
+  onCheck?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Switch: FC<Props> = ({ checked, onCheck }) => {
+const Switch: FC<Props> = ({ checked = true, onCheck }) => {
   const handleChange = () => {
-    onCheck((state) => !state)
+    if (onCheck) {
+      onCheck((state) => !state)
+    }
   }
   return (
     <Wrapper checked={checked} onClick={handleChange}>
